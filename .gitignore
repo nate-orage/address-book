@@ -1,6 +1,6 @@
 #Files
-contacts.csv
-*.ipynb
+#contacts.csv
+test.ipynb
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
