@@ -44,13 +44,13 @@ def check_file():
 
 
 def entry_info():
-    first = input(f"\nPlease enter the first name.\n")
-    last = input(f"\nPlease enter the last name.\n")
+    first = input(f"\nFirst name:\n")
+    last = input(f"\nLast name:\n")
     age = None
     age = age_check(age)
-    phone = input(f"\nPlease enter the contact" "s phone number.\n")
-    email = input(f"\nPlease enter the contact" "s email address.\n")
-    address = input(f"\nPlease enter the contact" "s address.\n")
+    phone = input(f"\nPhone number:\n")
+    email = input(f"\nE-mail address:\n")
+    address = input(f"\nHome or Mailing address:\n")
     contacts = pd.read_csv("contacts.csv")
     contact_data = Contact(
         first.capitalize(),
@@ -79,7 +79,7 @@ def entry_info():
 def age_check(age):
     # Checking for numbers.
     while True:
-        age = input(f"\nPlease enter the contact" "s age.\n")
+        age = input(f"\nAge:\n")
         try:
             int(age)
             return age
