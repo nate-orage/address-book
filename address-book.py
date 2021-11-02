@@ -104,9 +104,7 @@ def user_option():
         elif option_select == "3":
             clear()
             df = pd.read_csv("contacts.csv")
-            query = input(
-                f"Welcome. Please enter a first or last name to search for:\n\n"
-            )
+            query = input(f"Welcome. Please enter a first name to search for:\n\n")
             bools = []
             for i in df.First:
                 if query.lower() == i.lower():
