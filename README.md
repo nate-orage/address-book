@@ -11,5 +11,6 @@ It has the following features:
 - Checks if the file "contacts.csv" exists. If not, it creates it with the columns defined in "header" variable
 - It will also clean up a dirty "contacts.csv" if the columns are incorrect
 - faker.ipynb was used to generate my address book
+- Next step is to implement this into a GUI interface
 
 Please comment if you have any suggestions!
