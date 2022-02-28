@@ -20,15 +20,18 @@ class Contact:
         self.email = email
         self.address = address
         # Contact.num_of_contacts += 1
-
+    
+    #Capitalizes First and Last name
     def fullname(self):
         return "{} {}".format(self.first.capitalize(), self.last.capitalize())
-
+    
+    #Output of a new entry
     def __str__(self):
         return f"{self.first} {self.last} -- {self.age} -- {self.phone} -- {self.email} -- {self.address}\n"
 
 
 def check_file():
+    #File verification - checks to see if the file exists and if so, it also checks to make sure the headers matach. If     not, a new file will be created. 
     if os.path.exists("contacts.csv"):
         check_file = pd.read_csv("contacts.csv")
         if check_file.columns.to_list() == header:
@@ -76,6 +79,7 @@ def entry_info():
     print(contact_data)
 
 
+#Input validation. Only accepts whole numbers,
 def age_check(age):
     # Checking for numbers.
     while True:
@@ -92,6 +96,7 @@ def age_check(age):
 def user_option():
     print(f"Welcome to the Address Book.\n")
     option_select = None
+    #Program will keep running until the user quits by entering 'q'
     while option_select != "q":
         option_select = input(
             f"\n\nChoose an option:\n\n1 - Enter New Contact\n2 - Display Contacts\n3 - Search Contact Information\nq - Quit program\n\n"
@@ -101,6 +106,7 @@ def user_option():
         elif option_select == "2":
             clear()
             print(pd.read_csv("contacts.csv"))
+        #Search Function. Only searches first name. All matching first names are printed with the full contact info.
         elif option_select == "3":
             clear()
             df = pd.read_csv("contacts.csv")
@@ -118,7 +124,7 @@ def user_option():
             print(f"Goodbye.")
             break
 
-
+#Clear screen for tidyness.
 def clear():
     if name == "nt":
         _ = system("cls")
@@ -127,7 +133,7 @@ def clear():
     else:
         _ = system("clear")
 
-
+#Sets headers of the dataframe, checks if the file exists, sets new_contact to None and begins the program. 
 header = ["First", "Last", "Age", "Phone", "E-mail", "Address"]
 check_file()
 new_contact = None
